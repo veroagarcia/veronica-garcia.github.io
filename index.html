@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Verónica García | GRC, Digital Risk & Security Governance</title>
+<meta name="description" content="Profesional en seguridad de la información y GRC con experiencia ejecutiva. Governance, digital risk y security awareness para organizaciones en crecimiento. Patagonia, Argentina.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FAF8F4;
+    --ink:#2E2E2E;
+    --petrol:#1B3A4B;
+    --petrol-deep:#142B38;
+    --forest:#23463B;
+    --mist:#E7E5E0;
+    --line:#D9D6CF;
+    --muted:#6A6A66;
+    --paper-soft:#F3F0E9;
+    --display:"Space Grotesk",system-ui,sans-serif;
+    --body:"Inter",system-ui,sans-serif;
+    --maxw:1080px;
+    --prose:64ch;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:var(--body);
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.7;
+    font-size:17px;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  a{color:inherit;text-decoration:none;}
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
+
+  .eyebrow{
+    font-family:var(--display);
+    font-size:.74rem;
+    font-weight:600;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--petrol);
+  }
+
+  h1,h2,h3{font-family:var(--display);font-weight:600;letter-spacing:-.015em;line-height:1.1;color:var(--petrol);}
+
+  /* ---- node mark ---- */
+  .mark{width:26px;height:26px;flex:none;}
+  .mark line{stroke:var(--petrol);stroke-width:1.3;}
+  .mark circle{fill:var(--petrol);}
+
+  /* ---- nav ---- */
+  header.nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(250,248,244,.82);
+    backdrop-filter:saturate(140%) blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px;}
+  .brand{display:flex;align-items:center;gap:11px;font-family:var(--display);font-weight:600;color:var(--petrol);letter-spacing:-.01em;}
+  .nav-cta{font-family:var(--display);font-size:.9rem;font-weight:500;color:var(--petrol);border:1px solid var(--petrol);padding:7px 15px;border-radius:7px;transition:.18s ease;}
+  .nav-cta:hover{background:var(--petrol);color:var(--paper);}
+
+  /* ---- hero ---- */
+  .hero{position:relative;padding:clamp(64px,11vw,128px) 0 clamp(56px,8vw,96px);overflow:hidden;}
+  .hero::before{
+    content:"";position:absolute;inset:0;z-index:0;
+    background-image:radial-gradient(circle at center, var(--line) 1.1px, transparent 1.2px);
+    background-size:26px 26px;
+    -webkit-mask-image:linear-gradient(to bottom, rgba(0,0,0,.55), transparent 78%);
+    mask-image:linear-gradient(to bottom, rgba(0,0,0,.55), transparent 78%);
+    opacity:.7;
+  }
+  .hero .wrap{position:relative;z-index:1;}
+  .hero-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:26px;}
+  .hero h1{font-size:clamp(2.3rem,5.4vw,3.7rem);max-width:16ch;font-weight:600;}
+  .hero .sub{font-family:var(--display);font-size:clamp(1.05rem,2vw,1.3rem);font-weight:400;color:var(--forest);margin-top:22px;max-width:34ch;}
+  .hero .pos{margin-top:26px;max-width:52ch;color:var(--ink);font-size:1.06rem;}
+  .cta-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:38px;}
+  .btn{font-family:var(--display);font-weight:500;font-size:.98rem;padding:13px 24px;border-radius:8px;transition:.18s ease;display:inline-flex;align-items:center;gap:9px;border:1px solid var(--petrol);cursor:pointer;}
+  .btn-primary{background:var(--petrol);color:var(--paper);}
+  .btn-primary:hover{background:var(--petrol-deep);transform:translateY(-1px);}
+  .btn-ghost{background:transparent;color:var(--petrol);}
+  .btn-ghost:hover{background:var(--paper-soft);transform:translateY(-1px);}
+
+  /* ---- generic section ---- */
+  section{padding:clamp(56px,8vw,92px) 0;}
+  .sec-head{margin-bottom:40px;}
+  .sec-head h2{font-size:clamp(1.55rem,3.2vw,2.15rem);margin-top:12px;}
+  .prose p{max-width:var(--prose);color:var(--ink);}
+  .prose p + p{margin-top:20px;}
+
+  /* divider */
+  .divider{display:flex;align-items:center;justify-content:center;gap:14px;padding:8px 0;}
+  .divider .ln{height:1px;width:54px;background:var(--line);}
+  .divider .dot{width:6px;height:6px;border-radius:50%;background:var(--petrol);}
+
+  /* ---- pillars ---- */
+  .pillars{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+  .pillar{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:30px 28px;transition:.2s ease;}
+  .pillar:hover{border-color:var(--petrol);box-shadow:0 10px 30px -18px rgba(20,43,56,.4);transform:translateY(-2px);}
+  .pillar h3{font-size:1.22rem;margin-bottom:12px;}
+  .pillar p{font-size:1rem;color:var(--ink);}
+  .pillar .solves{margin-top:16px;padding-top:15px;border-top:1px dashed var(--line);font-size:.95rem;color:var(--muted);font-style:italic;}
+
+  /* ---- chips ---- */
+  .chips{display:flex;flex-wrap:wrap;gap:11px;max-width:var(--maxw);}
+  .chip{font-family:var(--display);font-size:.9rem;font-weight:500;color:var(--petrol);background:var(--paper-soft);border:1px solid var(--line);padding:8px 15px;border-radius:999px;}
+
+  /* ---- timeline ---- */
+  .timeline{position:relative;padding-left:34px;}
+  .timeline::before{content:"";position:absolute;left:6px;top:6px;bottom:6px;width:1.5px;background:var(--line);}
+  .tl-item{position:relative;padding-bottom:34px;}
+  .tl-item:last-child{padding-bottom:0;}
+  .tl-item::before{content:"";position:absolute;left:-34px;top:5px;width:13px;height:13px;border-radius:50%;background:var(--paper);border:2px solid var(--petrol);}
+  .tl-date{font-family:var(--display);font-weight:600;font-size:.92rem;color:var(--petrol);letter-spacing:.01em;}
+  .tl-role{font-family:var(--display);font-weight:600;font-size:1.1rem;color:var(--ink);margin:3px 0 5px;}
+  .tl-desc{font-size:1rem;color:var(--muted);max-width:56ch;}
+
+  /* ---- education ---- */
+  .edu-list{display:grid;gap:0;max-width:760px;}
+  .edu{display:flex;justify-content:space-between;align-items:baseline;gap:24px;padding:20px 0;border-bottom:1px solid var(--line);}
+  .edu:first-child{border-top:1px solid var(--line);}
+  .edu .t{font-family:var(--display);font-weight:600;font-size:1.06rem;color:var(--ink);}
+  .edu .i{font-size:.95rem;color:var(--muted);margin-top:3px;}
+  .edu .y{font-family:var(--display);font-weight:500;color:var(--petrol);font-size:.92rem;white-space:nowrap;}
+
+  /* ---- closing band (forest) ---- */
+  .band{background:var(--forest);color:var(--paper);position:relative;overflow:hidden;}
+  .band::before{
+    content:"";position:absolute;inset:0;
+    background-image:radial-gradient(circle at center, rgba(250,248,244,.10) 1px, transparent 1.2px);
+    background-size:30px 30px;opacity:.6;
+  }
+  .band .wrap{position:relative;z-index:1;}
+  .band .eyebrow{color:#9DBBAE;}
+  .band h2{color:var(--paper);font-size:clamp(1.55rem,3.2vw,2.15rem);margin-top:12px;max-width:20ch;}
+  .band .intro{margin-top:18px;max-width:54ch;color:#E4ECE7;}
+  .opp{display:grid;grid-template-columns:1fr 1fr;gap:10px 30px;margin:30px 0 28px;max-width:760px;}
+  .opp li{list-style:none;display:flex;gap:11px;align-items:flex-start;color:#EAF0EC;font-size:1.01rem;}
+  .opp li::before{content:"";flex:none;width:6px;height:6px;border-radius:50%;background:#9DBBAE;margin-top:10px;}
+  .band .close{max-width:54ch;color:#E4ECE7;margin-bottom:30px;}
+  .btn-onband{background:var(--paper);color:var(--forest);border-color:var(--paper);}
+  .btn-onband:hover{background:#fff;transform:translateY(-1px);}
+
+  /* ---- contact / footer ---- */
+  .contact{padding:clamp(48px,7vw,80px) 0;}
+  .contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:28px;max-width:900px;}
+  .cblock .lab{font-family:var(--display);font-size:.74rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;}
+  .cblock a,.cblock span{font-size:1.02rem;color:var(--ink);word-break:break-word;}
+  .cblock a:hover{color:var(--petrol);text-decoration:underline;}
+  footer.foot{border-top:1px solid var(--line);padding:26px 0;}
+  .foot-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+  .foot-inner .n{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:600;color:var(--petrol);}
+  .foot-inner small{color:var(--muted);font-size:.85rem;}
+
+  /* ---- reveal ---- */
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease;}
+  .reveal.in{opacity:1;transform:none;}
+
+  @media (max-width:720px){
+    body{font-size:16px;}
+    .pillars{grid-template-columns:1fr;}
+    .opp{grid-template-columns:1fr;}
+    .edu{flex-direction:column;gap:4px;}
+    .edu .y{order:-1;}
+    .nav-cta{display:none;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .reveal{opacity:1;transform:none;transition:none;}
+    html{scroll-behavior:auto;}
+    .btn,.pillar,.nav-cta{transition:none;}
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="wrap nav-inner">
+    <div class="brand">
+      <svg class="mark" viewBox="0 0 26 26" aria-hidden="true">
+        <line x1="6" y1="7" x2="20" y2="7"/><line x1="6" y1="7" x2="13" y2="20"/><line x1="20" y1="7" x2="13" y2="20"/>
+        <circle cx="6" cy="7" r="2.4"/><circle cx="20" cy="7" r="2.4"/><circle cx="13" cy="20" r="2.4"/>
+      </svg>
+      Verónica García
+    </div>
+    <a class="nav-cta" href="https://linkedin.com/in/veronica-garcia-cybersecurity" target="_blank" rel="noopener">Conectar en LinkedIn</a>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-eyebrow reveal">
+        <svg class="mark" viewBox="0 0 26 26" aria-hidden="true">
+          <line x1="6" y1="7" x2="20" y2="7"/><line x1="6" y1="7" x2="13" y2="20"/><line x1="20" y1="7" x2="13" y2="20"/>
+          <circle cx="6" cy="7" r="2.4"/><circle cx="20" cy="7" r="2.4"/><circle cx="13" cy="20" r="2.4"/>
+        </svg>
+        <span class="eyebrow">GRC · Digital Risk · Cybersecurity Governance</span>
+      </div>
+      <!-- Para cambiar el titular, editá la línea de abajo (opción B: "Donde el negocio, la tecnología y el riesgo se entienden.") -->
+      <h1 class="reveal">Seguridad de la información y governance con mirada de negocio.</h1>
+      <p class="sub reveal">GRC, digital risk y security awareness para organizaciones medianas y sectores regulados.</p>
+      <p class="pos reveal">Combino más de una década de dirección organizacional y transformación digital con formación técnica en seguridad informática. Traduzco riesgo y tecnología en criterios de gestión, controles y decisiones que el negocio entiende.</p>
+      <div class="cta-row reveal">
+        <a class="btn btn-primary" href="https://linkedin.com/in/veronica-garcia-cybersecurity" target="_blank" rel="noopener">Conectar en LinkedIn →</a>
+        <a class="btn btn-ghost" href="CV_Veronica_Garcia.pdf" download>Descargar CV</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE MÍ -->
+  <section id="sobre">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Sobre mí</span>
+        <h2>De dirigir organizaciones a cuidar su seguridad</h2>
+      </div>
+      <div class="prose reveal">
+        <p>Durante más de una década dirigí y co-gestioné organizaciones en sectores comerciales, de abastecimiento y consumo masivo. Fui presidenta de una empresa, socia directora de otra y responsable de compras y logística en el rubro energético. Ese recorrido me enseñó a sostener la operación, ordenar procesos, tomar decisiones con información incompleta y cuidar la continuidad del negocio cuando algo se complica.</p>
+        <p>En paralelo elegí formarme a fondo en lo técnico: completé las licenciaturas en Seguridad Informática e Informática, además de un bootcamp internacional en ciberinteligencia y gestión de amenazas. Hoy oriento mi carrera hacia GRC, cybersecurity governance, digital risk y security awareness: los espacios donde la seguridad deja de ser solo una cuestión técnica y se vuelve una decisión de gestión.</p>
+        <p>Mi diferencial es ese puente. Entiendo el lenguaje del negocio y el de la tecnología, y sé traducir entre ambos. Riesgo, sistemas, personas y procesos no son compartimentos separados; mi trabajo es ordenarlos en criterios claros, controles que se puedan sostener y una cultura de seguridad que la gente realmente adopte.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider reveal"><span class="ln"></span><span class="dot"></span><span class="ln"></span></div>
+
+  <!-- QUÉ APORTO -->
+  <section id="aporto">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Qué aporto</span>
+        <h2>Cuatro formas concretas de sumar</h2>
+      </div>
+      <div class="pillars">
+        <div class="pillar reveal">
+          <h3>Governance y gestión del riesgo digital</h3>
+          <p>Evalúo el nivel de madurez, identifico riesgos sobre procesos, personas y sistemas, y propongo criterios de governance adaptados al tamaño real de la organización.</p>
+          <p class="solves">“Sé que tengo riesgos, pero no sé por dónde empezar ni qué priorizar.”</p>
+        </div>
+        <div class="pillar reveal">
+          <h3>Concientización y cultura de seguridad</h3>
+          <p>Diseño estrategias de security awareness para que la seguridad se vuelva un hábito cotidiano y no una imposición que el equipo esquiva.</p>
+          <p class="solves">“La tecnología la tenemos, pero las personas siguen siendo la puerta de entrada de los incidentes.”</p>
+        </div>
+        <div class="pillar reveal">
+          <h3>Transformación digital con criterio de seguridad</h3>
+          <p>Acompaño la digitalización de procesos cuidando la trazabilidad, el control interno y la continuidad operativa.</p>
+          <p class="solves">“Queremos modernizarnos sin perder el control de lo que ya funciona.”</p>
+        </div>
+        <div class="pillar reveal">
+          <h3>Comunicación entre negocio, tecnología y riesgo</h3>
+          <p>Traduzco necesidades técnicas en decisiones de gestión, y necesidades del negocio en requisitos de seguridad, con documentación y reporting claros.</p>
+          <p class="solves">“La dirección y el área técnica no terminan de entenderse.”</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ÁREAS DE ENFOQUE -->
+  <section id="areas">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Áreas de enfoque</span>
+        <h2>En qué trabajo</h2>
+      </div>
+      <div class="chips reveal">
+        <span class="chip">GRC</span>
+        <span class="chip">Digital Risk</span>
+        <span class="chip">Cybersecurity Governance</span>
+        <span class="chip">Information Security</span>
+        <span class="chip">Security Awareness</span>
+        <span class="chip">Risk Management</span>
+        <span class="chip">IT Governance</span>
+        <span class="chip">Business Continuity</span>
+        <span class="chip">Organizational Resilience</span>
+        <span class="chip">Compliance</span>
+        <span class="chip">AI Governance</span>
+        <span class="chip">Cloud Security Governance</span>
+        <span class="chip">OSINT y DFIR (en formación)</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider reveal"><span class="ln"></span><span class="dot"></span><span class="ln"></span></div>
+
+  <!-- TRAYECTORIA -->
+  <section id="trayectoria">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Trayectoria</span>
+        <h2>De la dirección de organizaciones reales a la seguridad de la información</h2>
+      </div>
+      <div class="timeline">
+        <div class="tl-item reveal">
+          <div class="tl-date">2025 — Actualidad</div>
+          <div class="tl-role">Hackless</div>
+          <div class="tl-desc">Iniciativa profesional en ciberseguridad, governance y digital risk para organizaciones medianas en madurez digital.</div>
+        </div>
+        <div class="tl-item reveal">
+          <div class="tl-date">2024 — 2026</div>
+          <div class="tl-role">Universidad Siglo 21</div>
+          <div class="tl-desc">Licenciaturas en Seguridad Informática e Informática, y adscripción docente en el Seminario Final de Seguridad Informática.</div>
+        </div>
+        <div class="tl-item reveal">
+          <div class="tl-date">2018 — 2024</div>
+          <div class="tl-role">Entrecot S.R.L. · Socia directora</div>
+          <div class="tl-desc">Gestión operativa, administración financiera y digitalización de procesos en un entorno de consumo masivo.</div>
+        </div>
+        <div class="tl-item reveal">
+          <div class="tl-date">2013 — 2024</div>
+          <div class="tl-role">Tres G S.A. · Presidenta</div>
+          <div class="tl-desc">Dirección estratégica, coordinación de equipos e incorporación progresiva de criterios de IT governance y gestión del riesgo.</div>
+        </div>
+        <div class="tl-item reveal">
+          <div class="tl-date">2007 — 2009</div>
+          <div class="tl-role">Covin S.A. · Compras, stock y logística</div>
+          <div class="tl-desc">Coordinación de abastecimiento y proveedores en el sector metalúrgico-industrial orientado a energía.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORMACIÓN -->
+  <section id="formacion">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Formación</span>
+        <h2>Base académica</h2>
+      </div>
+      <div class="edu-list">
+        <div class="edu reveal">
+          <div><div class="t">Licenciatura en Seguridad Informática</div><div class="i">Universidad Siglo 21 · Título en trámite</div></div>
+          <div class="y">2026</div>
+        </div>
+        <div class="edu reveal">
+          <div><div class="t">Licenciatura en Informática</div><div class="i">Universidad Siglo 21 · Título en trámite</div></div>
+          <div class="y">2026</div>
+        </div>
+        <div class="edu reveal">
+          <div><div class="t">Analista de Sistemas</div><div class="i">Universidad Siglo 21</div></div>
+          <div class="y">2024</div>
+        </div>
+        <div class="edu reveal">
+          <div><div class="t">Cyber Intelligence &amp; Threat Management Bootcamp</div><div class="i">CCIC / Universidad Siglo 21 / Boston University</div></div>
+          <div class="y">2025</div>
+        </div>
+        <div class="edu reveal">
+          <div><div class="t">Ciberlac — Escuela de Verano en Ciberseguridad</div><div class="i">Ciudad de México</div></div>
+          <div class="y">2025</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPORTUNIDADES (band) -->
+  <section id="oportunidades" class="band">
+    <div class="wrap">
+      <div class="reveal">
+        <span class="eyebrow">Oportunidades de interés</span>
+        <h2>Abierta a conversaciones, proyectos y roles</h2>
+        <p class="intro">Estoy abierta a conversaciones profesionales en torno a:</p>
+      </div>
+      <ul class="opp reveal">
+        <li>Roles en GRC, digital risk e information security</li>
+        <li>Cybersecurity governance y compliance</li>
+        <li>Security awareness y cultura organizacional</li>
+        <li>Consultoría en ciberseguridad para PyMEs</li>
+        <li>Docencia y formación</li>
+        <li>AI governance y cloud security governance</li>
+        <li>Proyectos institucionales o académicos</li>
+        <li>Ecosistema tecnológico de la Patagonia</li>
+      </ul>
+      <p class="close reveal">Si algo de esto resuena con lo que estás buscando o construyendo, escribime. Me interesan tanto los roles formales como los proyectos y las colaboraciones.</p>
+      <a class="btn btn-onband reveal" href="https://linkedin.com/in/veronica-garcia-cybersecurity" target="_blank" rel="noopener">¿Conversamos? →</a>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section class="contact" id="contacto">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Contacto</span>
+        <h2>Dónde encontrarme</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="cblock reveal">
+          <div class="lab">LinkedIn</div>
+          <a href="https://linkedin.com/in/veronica-garcia-cybersecurity" target="_blank" rel="noopener">/veronica-garcia-cybersecurity</a>
+        </div>
+        <div class="cblock reveal">
+          <div class="lab">Email</div>
+          <a href="mailto:veronicaandrea.garcia@gmail.com">veronicaandrea.garcia@gmail.com</a>
+        </div>
+        <div class="cblock reveal">
+          <div class="lab">Ubicación</div>
+          <span>General Roca, Río Negro — Patagonia, Argentina · Remoto</span>
+        </div>
+        <div class="cblock reveal">
+          <div class="lab">Teléfono</div>
+          <a href="tel:+5492984746466">+54 9 2984 74-6466</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-inner">
+    <div class="n">
+      <svg class="mark" viewBox="0 0 26 26" aria-hidden="true">
+        <line x1="6" y1="7" x2="20" y2="7"/><line x1="6" y1="7" x2="13" y2="20"/><line x1="20" y1="7" x2="13" y2="20"/>
+        <circle cx="6" cy="7" r="2.4"/><circle cx="20" cy="7" r="2.4"/><circle cx="13" cy="20" r="2.4"/>
+      </svg>
+      Verónica García
+    </div>
+    <small>GRC · Digital Risk · Cybersecurity Governance — Patagonia, Argentina</small>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var els = document.querySelectorAll('.reveal');
+    if(reduce || !('IntersectionObserver' in window)){
+      els.forEach(function(el){el.classList.add('in');});
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, {threshold:.12, rootMargin:'0px 0px -8% 0px'});
+    els.forEach(function(el){ io.observe(el); });
+  })();
+</script>
+</body>
+</html>
